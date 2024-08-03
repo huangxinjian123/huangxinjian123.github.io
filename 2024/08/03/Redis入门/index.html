@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>天上星星亮晶晶</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Redis入门简介     打开redis服务端  进入redis客户端  redis服务端开启后霸屏，设置后台使用 修改配置文件  修改为yes  成功后台运行（也可以使用ubantu后台运行）  设置密码  重启redis（杀掉进程）  启动后输入auth 123456后可正常使用 注释起来，才可以远程连接   redis字符串操作 SETNX常用于分布式锁 哈希hash操作命令通常是对象使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="天上星星亮晶晶">
+<meta property="og:url" content="http://example.com/2024/08/03/Redis%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="天上星星亮晶晶">
+<meta property="og:description" content="Redis入门简介     打开redis服务端  进入redis客户端  redis服务端开启后霸屏，设置后台使用 修改配置文件  修改为yes  成功后台运行（也可以使用ubantu后台运行）  设置密码  重启redis（杀掉进程）  启动后输入auth 123456后可正常使用 注释起来，才可以远程连接   redis字符串操作 SETNX常用于分布式锁 哈希hash操作命令通常是对象使用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324092729895.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324092805144.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324092829623.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324093438630.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094348112.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094306467.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094508978.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094612785.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094850140.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324095405532.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324095608319.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324100608586.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324101911171.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324102333390.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324103900961.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324104303159.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324104848737.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324105514259.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324105921895.png">
+<meta property="article:published_time" content="2024-08-03T09:04:17.506Z">
+<meta property="article:modified_time" content="2024-03-24T02:59:24.954Z">
+<meta property="article:author" content="huangxinjian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324092729895.png">
+  
+    <link rel="alternate" href="/atom.xml" title="天上星星亮晶晶" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">天上星星亮晶晶</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Redis入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/08/03/Redis%E5%85%A5%E9%97%A8/" class="article-date">
+  <time class="dt-published" datetime="2024-08-03T09:04:17.506Z" itemprop="datePublished">2024-08-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis入门"><a href="#Redis入门" class="headerlink" title="Redis入门"></a>Redis入门</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324092729895.png" alt="image-20240324092729895"></p>
+<img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324092805144.png" alt="image-20240324092805144" style="zoom:67%;" />
+
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324092829623.png" alt="image-20240324092829623"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324093438630.png" alt="image-20240324093438630"></p>
+<p>打开redis服务端</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094348112.png" alt="image-20240324094348112"></p>
+<p>进入redis客户端</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094306467.png" alt="image-20240324094306467"></p>
+<p>redis服务端开启后霸屏，设置后台使用</p>
+<p>修改配置文件</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094508978.png" alt="image-20240324094508978"></p>
+<p>修改为yes</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094612785.png" alt="image-20240324094612785"></p>
+<p>成功后台运行（也可以使用ubantu后台运行）</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094850140.png" alt="image-20240324094850140"></p>
+<p>设置密码</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324095405532.png" alt="image-20240324095405532"></p>
+<p>重启redis（杀掉进程）</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324095608319.png" alt="image-20240324095608319"></p>
+<p>启动后输入auth 123456后可正常使用</p>
+<p>注释起来，才可以远程连接</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324100608586.png" alt="image-20240324100608586"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324101911171.png" alt="image-20240324101911171"></p>
+<h2 id="redis字符串操作"><a href="#redis字符串操作" class="headerlink" title="redis字符串操作"></a>redis字符串操作</h2><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324102333390.png" alt="image-20240324102333390"></p>
+<p>SETNX常用于分布式锁</p>
+<h2 id="哈希hash操作命令"><a href="#哈希hash操作命令" class="headerlink" title="哈希hash操作命令"></a>哈希hash操作命令</h2><p>通常是对象使用</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324103900961.png" alt="image-20240324103900961"></p>
+<h2 id="列表List操作命令"><a href="#列表List操作命令" class="headerlink" title="列表List操作命令"></a>列表List操作命令</h2><p>通常用于任务<strong>队列</strong></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324104303159.png" alt="image-20240324104303159"></p>
+<h2 id="集合set操作命令"><a href="#集合set操作命令" class="headerlink" title="集合set操作命令"></a>集合set操作命令</h2><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324104848737.png" alt="image-20240324104848737"></p>
+<p>差集注意顺序，前面减后面</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324105514259.png" alt="image-20240324105514259"></p>
+<h2 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h2><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324105921895.png" alt="image-20240324105921895"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/08/03/Redis%E5%85%A5%E9%97%A8/" data-id="clzdwronl0001rssw4dtx0d6q" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/08/03/SpringBoot%E5%AD%A6%E4%B9%A0(%E7%8B%82%E7%A5%9E)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/08/03/AJAX/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/03/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%AC%94%E8%AE%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/03/%E4%B9%90%E5%B0%9A%E4%BB%A3%E9%A9%BE/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/03/WebSocket/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 huangxinjian<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

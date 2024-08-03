@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>天上星星亮晶晶</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="瑞吉外卖配置项目部署1.手工部署安装tomcat 安装jdkJAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jdk1.8.0_102PATH&#x3D;$JAVA_HOME&#x2F;jdk&#x2F;bin:$PATH  安装vim yum -y install vim-minimal yum -y install vim-enhanced 安装mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="天上星星亮晶晶">
+<meta property="og:url" content="http://example.com/2024/08/03/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="天上星星亮晶晶">
+<meta property="og:description" content="瑞吉外卖配置项目部署1.手工部署安装tomcat 安装jdkJAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jdk1.8.0_102PATH&#x3D;$JAVA_HOME&#x2F;jdk&#x2F;bin:$PATH  安装vim yum -y install vim-minimal yum -y install vim-enhanced 安装mysql">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323093832921.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323094007408.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323094053939.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323094455782.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323094604077.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323094715760.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323095150541.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323095339725.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323095455673.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323095714724.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323100614646.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323101122210.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323101905438.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323101823647.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323103739235.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323103805775.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323104101999.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323104518534.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324092729895.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324092805144.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324092829623.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324093438630.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094348112.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094306467.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094508978.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094612785.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324094850140.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324095405532.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324095608319.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324100608586.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324101911171.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324102333390.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324103900961.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324104303159.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324104848737.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324105514259.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324105921895.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240331183851340.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240331184508682.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240401143246859.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240401144827484.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240401155603944.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402081819643.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402083323022.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402084527769.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402084907345.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402085309233.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402085923897.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402090156761.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402090706563.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402090738823.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240402092118241.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240404164126944.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405131424494.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405131816075.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405132446494.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405133157869.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405133212428.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405133229979.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405133638172.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405133944990.png">
+<meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240405134354030.png">
+<meta property="article:published_time" content="2024-08-03T09:04:46.413Z">
+<meta property="article:modified_time" content="2024-04-05T05:51:24.240Z">
+<meta property="article:author" content="huangxinjian">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240323093832921.png">
+  
+    <link rel="alternate" href="/atom.xml" title="天上星星亮晶晶" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">天上星星亮晶晶</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-瑞吉外卖笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/08/03/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-08-03T09:04:46.413Z" itemprop="datePublished">2024-08-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="瑞吉外卖配置"><a href="#瑞吉外卖配置" class="headerlink" title="瑞吉外卖配置"></a>瑞吉外卖配置</h1><h2 id="项目部署"><a href="#项目部署" class="headerlink" title="项目部署"></a>项目部署</h2><h3 id="1-手工部署"><a href="#1-手工部署" class="headerlink" title="1.手工部署"></a>1.手工部署</h3><h3 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323093832921.png" alt="image-20240323093832921"></p>
+<h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><p>JAVA_HOME&#x3D;&#x2F;usr&#x2F;local&#x2F;jdk1.8.0_102<br>PATH&#x3D;$JAVA_HOME&#x2F;jdk&#x2F;bin:$PATH</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323094007408.png" alt="image-20240323094007408"></p>
+<p>安装vim</p>
+<p>yum -y install vim-minimal</p>
+<p>yum -y install vim-enhanced</p>
+<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323094053939.png" alt="image-20240323094053939"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323094455782.png" alt="image-20240323094455782"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323094604077.png" alt="image-20240323094604077"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323094715760.png" alt="image-20240323094715760"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323095150541.png" alt="image-20240323095150541"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323095339725.png" alt="image-20240323095339725"></p>
+<p> S0qBPR!r0)OC</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323095455673.png" alt="image-20240323095455673"></p>
+<p>开放端口3306</p>
+<p>firewall-cmd –zone&#x3D;public –add-port&#x3D;3306&#x2F;tcp –permanent</p>
+<p>重启防火墙</p>
+<p>systemctl restart firewalld.service</p>
+<h3 id="安装lrzsz"><a href="#安装lrzsz" class="headerlink" title="安装lrzsz"></a>安装lrzsz</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323095714724.png" alt="image-20240323095714724"></p>
+<h3 id="部署流程："><a href="#部署流程：" class="headerlink" title="部署流程："></a>部署流程：</h3><ol>
+<li>在IDEA中开发SpringBoot项目并打成jar包</li>
+<li>将jar包上传到Linux服务器<br>mkdir &#x2F;usr&#x2F;local&#x2F;app           &#x2F;&#x2F;创建目录，将项目jar包放到此目录</li>
+<li>启动SpringBoot程序            &#x2F;&#x2F;java -jar jar包名</li>
+<li>检查防火墙，确保8080端口对外开放，访问SpringBoot项目       &#x2F;&#x2F;firewall-cmd –zone&#x3D;public –list-ports</li>
+</ol>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323100614646.png" alt="image-20240323100614646"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323101122210.png" alt="image-20240323101122210"></p>
+<h3 id="2-通过Shell脚本自动部署项目"><a href="#2-通过Shell脚本自动部署项目" class="headerlink" title="2.通过Shell脚本自动部署项目"></a>2.通过Shell脚本自动部署项目</h3><h3 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a>操作步骤：</h3><p>1、在Linux中安装Git</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323101905438.png" alt="image-20240323101905438">2、在Linux中安装maven<br>3、编写Shel脚本（拉取代码、编译、打包、启动)</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323101823647.png" alt="image-20240323101823647"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323103739235.png" alt="image-20240323103739235"></p>
+<p>4、为用户授予执行Shel脚本的权限</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323103805775.png" alt="image-20240323103805775"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323104101999.png" alt="image-20240323104101999"></p>
+<p>5、执行Shelll脚本</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240323104518534.png" alt="image-20240323104518534"></p>
+<h2 id="Redis入门"><a href="#Redis入门" class="headerlink" title="Redis入门"></a>Redis入门</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324092729895.png" alt="image-20240324092729895"></p>
+<img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324092805144.png" alt="image-20240324092805144" style="zoom:67%;" />
+
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324092829623.png" alt="image-20240324092829623"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324093438630.png" alt="image-20240324093438630"></p>
+<p>打开redis服务端</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094348112.png" alt="image-20240324094348112"></p>
+<p>进入redis客户端</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094306467.png" alt="image-20240324094306467"></p>
+<p>redis服务端开启后霸屏，设置后台使用</p>
+<p>修改配置文件</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094508978.png" alt="image-20240324094508978"></p>
+<p>修改为yes</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094612785.png" alt="image-20240324094612785"></p>
+<p>成功后台运行（也可以使用ubantu后台运行）</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324094850140.png" alt="image-20240324094850140"></p>
+<p>设置密码</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324095405532.png" alt="image-20240324095405532"></p>
+<p>重启redis（杀掉进程）</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324095608319.png" alt="image-20240324095608319"></p>
+<p>启动后输入auth 123456后可正常使用</p>
+<p>注释起来，才可以远程连接</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324100608586.png" alt="image-20240324100608586"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324101911171.png" alt="image-20240324101911171"></p>
+<h3 id="redis字符串操作"><a href="#redis字符串操作" class="headerlink" title="redis字符串操作"></a>redis字符串操作</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324102333390.png" alt="image-20240324102333390"></p>
+<p>SETNX常用于分布式锁</p>
+<h3 id="哈希hash操作命令"><a href="#哈希hash操作命令" class="headerlink" title="哈希hash操作命令"></a>哈希hash操作命令</h3><p>通常是对象使用</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324103900961.png" alt="image-20240324103900961"></p>
+<h3 id="列表List操作命令"><a href="#列表List操作命令" class="headerlink" title="列表List操作命令"></a>列表List操作命令</h3><p>通常用于任务<strong>队列</strong></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324104303159.png" alt="image-20240324104303159"></p>
+<h3 id="集合set操作命令"><a href="#集合set操作命令" class="headerlink" title="集合set操作命令"></a>集合set操作命令</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324104848737.png" alt="image-20240324104848737"></p>
+<p>差集注意顺序，前面减后面</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324105514259.png" alt="image-20240324105514259"></p>
+<h3 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240324105921895.png" alt="image-20240324105921895"></p>
+<h2 id="mysql主从复制"><a href="#mysql主从复制" class="headerlink" title="mysql主从复制"></a>mysql主从复制</h2><p>复制的虚拟机，要把里面的mysql的uuid进行修改</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">生成uuid</span><br><span class="line"><span class="keyword">select</span> uuid();</span><br></pre></td></tr></table></figure>
+
+<p>然后在配置文件中修改uuid</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /var/lib/mysql/</span><br><span class="line">vi auto.cnf </span><br><span class="line">//修改server-uuid</span><br></pre></td></tr></table></figure>
+
+<p>复制的虚拟机修改静态ip地址和网关</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/sysconfig/network-scripts/</span><br><span class="line">vim ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IPADDR=192.168.75.100</span><br><span class="line">GATEWAY=192.168.75.2</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">DNS1=218.4.4.4</span><br><span class="line">DNS2=8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240331183851340.png" alt="image-20240331183851340"></p>
+<p>重启网络systemctl restart network</p>
+<h2 id="读写分离案例"><a href="#读写分离案例" class="headerlink" title="读写分离案例"></a>读写分离案例</h2><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240331184508682.png" alt="image-20240331184508682">、</p>
+<p>测试时报以下错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">No appropriate protocol (protocol is disabled or cipher suites are inappropr</span><br></pre></td></tr></table></figure>
+
+<p><strong>需要加上&amp;useSSL&#x3D;false</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SSL(Secure  Sockets Layer)，安全套接字协议。</span><br><span class="line"></span><br><span class="line">在连接Mysql时,</span><br><span class="line"></span><br><span class="line">如果MySQL的版本为5.7以上时，必须加上useSSL=false，直接通过用户账号和密码进行连接MySQL数据库；当MySQL的版本是5.7以下则不进行要求，默认使用useSSL=false。</span><br><span class="line"></span><br><span class="line">useSSL=false:使用用户账号密码进行连接。</span><br><span class="line"></span><br><span class="line">useSSL=true:y一般通过证书或者令牌进行安全验证。</span><br><span class="line"></span><br><span class="line">贴别的:在MySQL8.0以上版本还需要加上本地时区,serverTimeZone=GTM/beijing</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nginx实现负载均衡"><a href="#Nginx实现负载均衡" class="headerlink" title="Nginx实现负载均衡"></a>Nginx实现负载均衡</h2><p>主要是配置文件 nginx.conf</p>
+<p>优点：占用内存少，并发能力强</p>
+<p>官网：<a target="_blank" rel="noopener" href="https://nginx.org/">https://nginx.org/</a></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240401143246859.png" alt="image-20240401143246859"></p>
+<p>第五点是配置一会要安装的地址在哪里</p>
+<p>第六条是编译还有安装、</p>
+<p>nginx目录结构：</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240401144827484.png" alt="image-20240401144827484"></p>
+<h3 id="nginx常用命令"><a href="#nginx常用命令" class="headerlink" title="nginx常用命令"></a>nginx常用命令</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">查看版本号：./nginx -v  <span class="comment">//先到sbin目录下</span></span><br><span class="line">检查配置文件是否有错误  ./nginx -t</span><br><span class="line">启动Nginx服务 ./nginx</span><br><span class="line">停止命令 ./nginx -s stop</span><br><span class="line">启动后查看进程 ps -ef|grep nginx</span><br><span class="line">重新加载配置文件 ./nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<p>启动后要关防火墙</p>
+<p>systemctl stop firewalld</p>
+<p>配置环境变量</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240401155603944.png" alt="image-20240401155603944"></p>
+<h3 id="nginx配置文件结构"><a href="#nginx配置文件结构" class="headerlink" title="nginx配置文件结构"></a>nginx配置文件结构</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402081819643.png" alt="image-20240402081819643"></p>
+<p>Nginxi配置文件(conf&#x2F;nginx.conf)整体分为三部分：<br>●全局块   和Nginx运行相关的全局配置<br>●events块  和网络连接相关的配置<br>●http块  代理、缓存、日志记录、虚拟主机配置<br>    ■http全局块<br>    ■Server块<br>            ◆Server全局块<br>            ◆location块</p>
+<p><strong>注意</strong>：http块中可以配置多个Server块，每个Server块中可以<br>配置多个location块。</p>
+<h3 id="nginx的具体应用"><a href="#nginx的具体应用" class="headerlink" title="nginx的具体应用"></a>nginx的具体应用</h3><h4 id="部署静态资源"><a href="#部署静态资源" class="headerlink" title="部署静态资源"></a>部署静态资源</h4><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402083323022.png" alt="image-20240402083323022"></p>
+<h4 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h4><p><strong>正向代理：</strong></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402084527769.png" alt="image-20240402084527769"></p>
+<p><strong>反向代理：</strong></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402084907345.png" alt="image-20240402084907345"></p>
+<p>配置反向代理服务器</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402085309233.png" alt="image-20240402085309233"></p>
+<h4 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h4><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402085923897.png" alt="image-20240402085923897"></p>
+<h5 id="配置负载均衡"><a href="#配置负载均衡" class="headerlink" title="配置负载均衡"></a>配置负载均衡</h5><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402090156761.png" alt="image-20240402090156761"></p>
+<h4 id="负载均衡策略"><a href="#负载均衡策略" class="headerlink" title="负载均衡策略"></a>负载均衡策略</h4><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402090706563.png" alt="image-20240402090706563"></p>
+<p>权重配置</p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402090738823.png" alt="image-20240402090738823"></p>
+<h2 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h2><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240402092118241.png" alt="image-20240402092118241"></p>
+<h2 id="YApi"><a href="#YApi" class="headerlink" title="YApi"></a>YApi</h2><p>定义接口，提供接口管理服务</p>
+<p>官网：<a target="_blank" rel="noopener" href="https://github.com/YMFE/yapi">https://github.com/YMFE/yapi</a></p>
+<h2 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h2><p>官网：<a target="_blank" rel="noopener" href="https://swagger.io/">https://swagger.io/</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupid</span>&gt;</span>com.github.xiaoymin<span class="tag">&lt;/<span class="name">groupid</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactid</span>&gt;</span>knife4j-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactid</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><p>操作步骤：<br>1、导入knife4j的maven坐标<br>2、导入knife4j相关配置类<br>3、设置静态资源；否则接口文档页面无法访问<br>4、在LoginCheckFilter中设置不需要处理的请求路径</p>
+<h3 id="导入配置"><a href="#导入配置" class="headerlink" title="导入配置"></a>导入配置</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240404164126944.png" alt="image-20240404164126944"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405131424494.png" alt="image-20240405131424494"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">registry.addResourceHandler(<span class="string">&quot;doc.html&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/&quot;</span>);</span><br><span class="line">registry.addResourceHandler(<span class="string">&quot;/webjars/**&quot;</span>).addResourceLocations(<span class="string">&quot;classpath:/META-INF/resources/webjars/&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405131816075.png" alt="image-20240405131816075"></p>
+<h3 id="swagger常用注解"><a href="#swagger常用注解" class="headerlink" title="swagger常用注解"></a>swagger常用注解</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405132446494.png" alt="image-20240405132446494"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405133157869.png" alt="image-20240405133157869"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405133212428.png" alt="image-20240405133212428"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405133229979.png" alt="image-20240405133229979"></p>
+<h2 id="项目部署-1"><a href="#项目部署-1" class="headerlink" title="项目部署"></a>项目部署</h2><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405133638172.png" alt="image-20240405133638172"></p>
+<p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405133944990.png" alt="image-20240405133944990"></p>
+<h3 id="部署前端项目"><a href="#部署前端项目" class="headerlink" title="部署前端项目"></a>部署前端项目</h3><p><img src="C:\Users\黄欣健\AppData\Roaming\Typora\typora-user-images\image-20240405134354030.png" alt="image-20240405134354030"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/08/03/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%AC%94%E8%AE%B0/" data-id="clzdwronu0008rsswayqvhtmx" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/08/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/08/03/%E4%B9%90%E5%B0%9A%E4%BB%A3%E9%A9%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">八月 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/08/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/03/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%AC%94%E8%AE%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/03/%E4%B9%90%E5%B0%9A%E4%BB%A3%E9%A9%BE/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/08/03/WebSocket/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 huangxinjian<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
