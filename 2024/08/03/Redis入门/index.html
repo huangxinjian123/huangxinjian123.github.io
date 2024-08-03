@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   
   
-  <title>天上星星亮晶晶</title>
+  <title>Redis | 天上星星亮晶晶</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Redis入门简介     打开redis服务端  进入redis客户端  redis服务端开启后霸屏，设置后台使用 修改配置文件  修改为yes  成功后台运行（也可以使用ubantu后台运行）  设置密码  重启redis（杀掉进程）  启动后输入auth 123456后可正常使用 注释起来，才可以远程连接   redis字符串操作 SETNX常用于分布式锁 哈希hash操作命令通常是对象使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="天上星星亮晶晶">
+<meta property="og:title" content="Redis">
 <meta property="og:url" content="http://example.com/2024/08/03/Redis%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="天上星星亮晶晶">
 <meta property="og:description" content="Redis入门简介     打开redis服务端  进入redis客户端  redis服务端开启后霸屏，设置后台使用 修改配置文件  修改为yes  成功后台运行（也可以使用ubantu后台运行）  设置密码  重启redis（杀掉进程）  启动后输入auth 123456后可正常使用 注释起来，才可以远程连接   redis字符串操作 SETNX常用于分布式锁 哈希hash操作命令通常是对象使用">
@@ -32,8 +32,8 @@
 <meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324104848737.png">
 <meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324105514259.png">
 <meta property="og:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324105921895.png">
-<meta property="article:published_time" content="2024-08-03T09:04:17.506Z">
-<meta property="article:modified_time" content="2024-03-24T02:59:24.954Z">
+<meta property="article:published_time" content="2024-08-03T08:05:36.000Z">
+<meta property="article:modified_time" content="2024-08-03T09:14:56.828Z">
 <meta property="article:author" content="huangxinjian">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:\Users\%E9%BB%84%E6%AC%A3%E5%81%A5\AppData\Roaming\Typora\typora-user-images\image-20240324092729895.png">
@@ -94,12 +94,22 @@
         <section id="main"><article id="post-Redis入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/08/03/Redis%E5%85%A5%E9%97%A8/" class="article-date">
-  <time class="dt-published" datetime="2024-08-03T09:04:17.506Z" itemprop="datePublished">2024-08-03</time>
+  <time class="dt-published" datetime="2024-08-03T08:05:36.000Z" itemprop="datePublished">2024-08-03</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Redis
+    </h1>
+  
+
+      </header>
     
     <div class="e-content article-entry" itemprop="articleBody">
       
@@ -141,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/08/03/Redis%E5%85%A5%E9%97%A8/" data-id="clzdwronl0001rssw4dtx0d6q" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2024/08/03/Redis%E5%85%A5%E9%97%A8/" data-id="clzdwronl0001rssw4dtx0d6q" data-title="Redis" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -151,19 +161,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/08/03/SpringBoot%E5%AD%A6%E4%B9%A0(%E7%8B%82%E7%A5%9E)/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/08/03/AJAX/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
-          (no title)
+          AJAX
         
       </div>
     </a>
   
   
-    <a href="/2024/08/03/AJAX/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/08/03/SpringBoot%E5%AD%A6%E4%B9%A0(%E7%8B%82%E7%A5%9E)/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">SpringBoot</div>
     </a>
   
 </nav>
@@ -201,23 +211,23 @@
       <ul>
         
           <li>
-            <a href="/2024/08/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">(no title)</a>
+            <a href="/2024/08/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
           </li>
         
           <li>
-            <a href="/2024/08/03/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%AC%94%E8%AE%B0/">(no title)</a>
+            <a href="/2024/08/03/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%AC%94%E8%AE%B0/">瑞吉外卖配置</a>
           </li>
         
           <li>
-            <a href="/2024/08/03/%E4%B9%90%E5%B0%9A%E4%BB%A3%E9%A9%BE/">(no title)</a>
+            <a href="/2024/08/03/%E4%B9%90%E5%B0%9A%E4%BB%A3%E9%A9%BE/">乐尚代驾</a>
           </li>
         
           <li>
-            <a href="/2024/08/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">(no title)</a>
+            <a href="/2024/08/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">计算机基础与程序设计</a>
           </li>
         
           <li>
-            <a href="/2024/08/03/WebSocket/">(no title)</a>
+            <a href="/2024/08/03/WebSocket/">WebSocket</a>
           </li>
         
       </ul>
